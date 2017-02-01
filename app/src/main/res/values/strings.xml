@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">师傅配送</string>
+    <string name="action_done">完成输入</string>
+    <string name="add_count">已添加 %1$s 单</string>
+    <string name="no_data">未填写</string>
+    <string name="phone">手机：%1$s</string>
+    <string name="name">姓名：%1$s</string>
+    <string name="num">单号：%1$s</string>
+    <string name="address">地址：%1$s</string>
+</resources>
