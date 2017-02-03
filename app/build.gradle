@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        saber {
+            keyAlias 'sabersign'
+            keyPassword 'hxb19920727'
+            storeFile file('/Users/julie/android_keystore.jks')
+            storePassword 'hxb19920727'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.saber.app.distributionplanning"
         minSdkVersion 16
@@ -15,9 +22,12 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.saber
+        }
+        debug {
+            signingConfig signingConfigs.saber
         }
     }
-
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']

@@ -206,8 +206,17 @@ public class NavigationListActivity extends BaseActivity implements CommonAdapte
                 }
                 break;
             case R.id.tv_phone:
-                Toast.makeText(NavigationListActivity.this, "phone!", Toast.LENGTH_SHORT).show();
-                tel(bean.getPhone());
+                requestRuntimePermissions(new String[]{"android.permission.CALL_PHONE"}, new OnRuntimePermissionResultListener() {
+                    @Override
+                    public void onDenied(String[] permission) {
+                        //do nothing
+                    }
+
+                    @Override
+                    public void onGranted() {
+                        tel(bean.getPhone());
+                    }
+                });
                 break;
         }
     }
